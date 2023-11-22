@@ -21,10 +21,10 @@ module.exports = {
         let author = interaction.guild.members.cache.get(interaction.user.id);
 
 
-        if(config.Roles.Owner.includes(x => author.roles.cache.has(x))) return interaction.reply({ embeds: [embed.setColor('Red').setDescription(`Bu komutu yalnızca ${config.Roles.WhitelistAuth.map(x => `<@&${x}>`)} yetkili olanlar kullanabilir.`)], ephemeral:true})
+        if(!config.Roles.Owner.some(x => author.roles.cache.has(x)) && !config.Roles.UpperStaff.some(x => author.roles.cache.has(x))) return interaction.reply({ embeds: [embed.setColor('Red').setDescription(`Bu komutu yalnızca ${config.Roles.WhitelistAuth.map(x => `<@&${x}>`)} yetkili olanlar kullanabilir.`)], ephemeral:true})
 
   
-       await member.roles.add(config.Roles.Whitelist)
+       await member.roles.add(values2)
 
        await interaction.reply({ embeds: [embed.setDescription(`${value} Adlı üyeye ${values2} rolü verildi.`)]})
 
