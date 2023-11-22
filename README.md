@@ -3,18 +3,6 @@
 - [Discord]- Raviwen.
 
 ## Configuration
-# Commands
-
-```
-/aktif
-/bakım
-/restart
-/ban
-/ip
-/rol_al
-/rol_ver
-/whitelist
-```
 ```
 module.exports ={
     "Bot": {
@@ -42,4 +30,17 @@ module.exports ={
     },
 }
 
+```
+
+# Commands
+
+```
+/aktif
+/bakım
+/restart
+/ban
+/ip
+/rol_al
+/rol_ver
+/whitelist
 ```
