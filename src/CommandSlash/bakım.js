@@ -11,7 +11,7 @@ module.exports = {
         
         let author = interaction.guild.members.cache.get(interaction.user.id);
 
-        if(config.Roles.Owner.includes(x => author.roles.cache.has(x))) return interaction.reply({ embeds: [embed.setColor('Red').setDescription(`Bu komutu yalnızca ${config.Roles.Owner.map(x => `<@&${x}>`)} yetkili olanlar kullanabilir.`)], ephemeral:true})
+        if(!config.Roles.Owner.some(x => author.roles.cache.has(x))) return interaction.reply({ embeds: [embed.setColor('Red').setDescription(`Bu komutu yalnızca ${config.Roles.Owner.map(x => `<@&${x}>`)} yetkili olanlar kullanabilir.`)], ephemeral:true})
 
         const message = new EmbedBuilder()
         .setColor('Green')
