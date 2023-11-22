@@ -12,7 +12,7 @@ module.exports = {
         const embed = new EmbedBuilder().setTimestamp().setFooter({ text: `${config.Bot.Status}`}).setColor('Random').setAuthor({ name: interaction.user.username, iconURL: interaction.user.avatarURL({dynamic:true})})
         
         let value = interaction.options.getUser('üye')
-        let values22 = interaction.options.getString('hex')
+        let values2 = interaction.options.getString('hex')
 
         let member = interaction.guild.members.cache.get(value.id)
         let author = interaction.guild.members.cache.get(interaction.user.id);
