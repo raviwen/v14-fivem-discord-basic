@@ -21,14 +21,14 @@ module.exports = {
         let author = interaction.guild.members.cache.get(interaction.user.id);
 
 
-        if(config.Roles.Owner.includes(x => author.roles.cache.has(x))) return interaction.reply({ embeds: [embed.setColor('Red').setDescription(`Bu komutu yalnızca ${config.Roles.WhitelistAuth.map(x => `<@&${x}>`)} yetkili olanlar kullanabilir.`)], ephemeral:true})
+        if(!config.Roles.Owner.some(x => author.roles.cache.has(x)) && !config.Roles.UpperStaff.some(x => author.roles.cache.has(x))) return interaction.reply({ embeds: [embed.setColor('Red').setDescription(`Bu komutu yalnızca ${config.Roles.Owner.map(x => `<@&${x}>`)} yetkili olanlar kullanabilir.`)], ephemeral:true})
 
   
-      // await member.ban({ reason: `Yetkili : ${author.user.username}-(${author.id}) | ${values2}` })
+      await member.ban({ reason: `Yetkili : ${author.user.username}-(${author.id}) | ${values2}` })
        await interaction.reply({ embeds: [embed.setDescription(`${value} Adlı üye sunucudan ${values2} sebebiyle yasaklandı.`)]})
 
 
-       await interaction.guild.channels.cache.get(config.Channels.RoleLog).send({ 
+       await interaction.guild.channels.cache.get(config.Channels.BanLog).send({ 
         embeds: [
             embed
             .setTitle(`Banlama İşlemi`)
