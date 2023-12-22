@@ -6,6 +6,7 @@ module.exports ={
     },
     "Roles": {
         "Owner": ["YOUR_OWNER_ROLE_ID"],  // Owner rolü (Kullanabildiği komutlar) = [Aktif/Bakım/Restart/Rol(ver/al)]
+        "UpperStaff": [""], // BAN - ROL AL/VER - WHİTELİST  
         "WhitelistAuth": ["YOUR_WHITELIST_AUTH_ROLE_ID"], // Whitelist yetkilisi (Kullanabildiği komutlar) = [Kayıtsız/Whitelist(onay/red)]
         "Whitelist": "YOUR_WHITELIST_ROLE_ID", // Whitelist rolü
         "UnRegistered": "YOUR_UNREGISTERED_ROLE_ID", // Kayıtsız rolü
